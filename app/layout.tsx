@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, Montserrat } from 'next/font/google'
+import { Cormorant_Garamond, Jost } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
@@ -9,15 +9,15 @@ const cormorant = Cormorant_Garamond({
   variable: '--font-serif',
 })
 
-const montserrat = Montserrat({
+const jost = Jost({
   subsets: ['latin'],
   weight: ['300', '400', '500'],
   variable: '--font-sans',
 })
 
 export const metadata: Metadata = {
-  title: 'Eleanor James Co. | Luxury Wedding & Event Planning',
-  description: 'Crafting unforgettable celebrations with timeless elegance. Luxury wedding and event planning services worldwide.',
+  title: 'Double A Planners | Bodas & Eventos',
+  description: 'Double A Planners crea celebraciones extraordinarias que reflejan quiénes son — desde ceremonias íntimas hasta grandes eventos de destino, ejecutados con gracia e intención.',
   icons: {
     icon: [
       {
@@ -43,7 +43,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${montserrat.variable} bg-background`}>
+    <html lang="es" className={`${cormorant.variable} ${jost.variable} bg-background`}>
       <body className="font-sans antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
