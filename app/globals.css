@@ -317,7 +317,24 @@ section.custom-section { padding: 7rem 4rem; }
   z-index: 1;
 }
 .contact-info {
-  background: var(--charcoal);
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(184,154,106,0.04) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(184,154,106,0.03) 0%, transparent 50%),
+    repeating-linear-gradient(
+      118deg,
+      transparent,
+      transparent 2px,
+      rgba(255,255,255,0.012) 2px,
+      rgba(255,255,255,0.012) 3px
+    ),
+    repeating-linear-gradient(
+      52deg,
+      transparent,
+      transparent 4px,
+      rgba(255,255,255,0.008) 4px,
+      rgba(255,255,255,0.008) 5px
+    ),
+    var(--charcoal);
   padding: 6rem 4rem;
   display: flex;
   flex-direction: column;
@@ -326,14 +343,39 @@ section.custom-section { padding: 7rem 4rem; }
 }
 .contact-info .section-label { text-align: left; }
 .contact-info .section-title { color: var(--ivory); text-align: left; margin-bottom: 1.5rem; }
-.contact-text { font-size: 0.88rem; line-height: 1.9; color: rgba(249,246,240,0.55); margin-bottom: 2.5rem; font-weight: 300; }
-.contact-detail { margin-bottom: 1.4rem; display: flex; flex-direction: column; gap: 0.25rem; }
-.contact-detail-label { font-size: 0.58rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--warm-gold); }
-.contact-detail-val { font-size: 0.9rem; color: rgba(249,246,240,0.75); font-weight: 300; letter-spacing: 0.02em; }
+.contact-text { font-size: clamp(0.85rem, 1.5vw, 0.95rem); line-height: 1.9; color: rgba(249,246,240,0.55); margin-bottom: 2.5rem; font-weight: 300; }
+.contact-detail { margin-bottom: 1.4rem; display: flex; flex-direction: column; gap: 0.3rem; }
+.contact-detail-label { font-size: clamp(0.6rem, 1.2vw, 0.65rem); letter-spacing: 0.28em; text-transform: uppercase; color: var(--warm-gold); }
+.contact-detail-val { font-size: clamp(0.88rem, 1.6vw, 0.95rem); color: rgba(249,246,240,0.75); font-weight: 300; letter-spacing: 0.02em; }
 .contact-social-divider { width: 40px; height: 1px; background: rgba(184,154,106,0.3); margin: 2rem 0 1.5rem; }
 
 .contact-form {
-  background: #13100d;
+  background:
+    radial-gradient(ellipse at 85% 15%, rgba(220,200,160,0.06) 0%, transparent 45%),
+    radial-gradient(ellipse at 15% 85%, rgba(184,154,106,0.05) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 50%, rgba(200,180,140,0.03) 0%, transparent 70%),
+    repeating-linear-gradient(
+      105deg,
+      transparent,
+      transparent 3px,
+      rgba(255,255,255,0.018) 3px,
+      rgba(255,255,255,0.018) 4px
+    ),
+    repeating-linear-gradient(
+      165deg,
+      transparent,
+      transparent 6px,
+      rgba(255,255,255,0.008) 6px,
+      rgba(255,255,255,0.008) 7px
+    ),
+    repeating-linear-gradient(
+      75deg,
+      transparent,
+      transparent 12px,
+      rgba(184,154,106,0.025) 12px,
+      rgba(184,154,106,0.025) 13px
+    ),
+    #13100d;
   padding: 6rem 4.5rem;
   display: flex;
   flex-direction: column;
@@ -342,7 +384,7 @@ section.custom-section { padding: 7rem 4rem; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
 .form-group { display: flex; flex-direction: column; gap: 0.6rem; }
 .form-group label {
-  font-size: 0.58rem;
+  font-size: clamp(0.6rem, 1.2vw, 0.65rem);
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--warm-gold);
@@ -354,7 +396,7 @@ section.custom-section { padding: 7rem 4rem; }
   border-bottom: 1px solid rgba(184,154,106,0.25);
   padding: 0.75rem 0;
   font-family: var(--sans);
-  font-size: 0.9rem;
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
   font-weight: 300;
   color: rgba(249,246,240,0.9);
   outline: none;
@@ -388,10 +430,10 @@ section.custom-section { padding: 7rem 4rem; }
 .form-submit {
   margin-top: 2.5rem;
   align-self: stretch;
-  font-size: 0.65rem;
+  font-size: clamp(0.65rem, 1.4vw, 0.72rem);
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  padding: 1.1rem 2.5rem;
+  padding: clamp(0.9rem, 2vw, 1.1rem) 2.5rem;
   background: transparent;
   color: var(--warm-gold);
   border: 1px solid rgba(184,154,106,0.6);
@@ -404,6 +446,16 @@ section.custom-section { padding: 7rem 4rem; }
   background: var(--warm-gold);
   color: #13100d;
   border-color: var(--warm-gold);
+}
+
+@media (max-width: 768px) {
+  .contact-section { grid-template-columns: 1fr; }
+  .contact-info { padding: 4rem 2rem; border-right: none; border-bottom: 1px solid rgba(184,154,106,0.12); }
+  .contact-form { padding: 4rem 2rem; }
+  .form-row { grid-template-columns: 1fr; gap: 1.5rem; }
+  .form-group input, .form-group textarea, .form-group select { font-size: 1rem; }
+  .form-group label { font-size: 0.65rem; }
+  .form-submit { font-size: 0.7rem; padding: 1rem 2rem; }
 }
 
 /* FOOTER */
