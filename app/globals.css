@@ -233,10 +233,10 @@ nav.custom-nav {
 .marquee-track { display: flex; gap: 3rem; width: max-content; animation: marquee 22s linear infinite; }
 .marquee-item {
   font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase;
-  color: rgba(249,246,240,0.4); white-space: nowrap;
+  color: var(--warm-gold); white-space: nowrap;
   display: flex; align-items: center; gap: 3rem;
 }
-.marquee-item span { color: rgba(249, 246, 240, 0.4); }
+.marquee-item span { color: var(--warm-gold); }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* SECTIONS */
