@@ -130,8 +130,8 @@
 :root {
   --ivory: #f9f6f0;
   --cream: #f2ede4;
-  --warm-gold: #d4af37;
-  --deep-gold: #aa861e;
+  --warm-gold: #c2973b;
+  --deep-gold: #9c7323;
   --charcoal: #2c2825;
   --muted: #7a7268;
   --blush: #e8d5c8;
@@ -321,25 +321,29 @@ section.custom-section { padding: 7rem 4rem; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
 .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
 .form-group label {
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #ffffff;
+  font-weight: 700;
   text-shadow: 
     -1px -1px 0 #000,  
      1px -1px 0 #000,
     -1px  1px 0 #000,
-     1px  1px 0 #000;
-  -webkit-text-stroke: 0.5px #000;
+     1px  1px 0 #000,
+     0px -1px 0 #000,
+     0px  1px 0 #000,
+    -1px  0px 0 #000,
+     1px  0px 0 #000;
 }
 .form-group input, .form-group textarea, .form-group select {
   background: transparent;
   border: none;
-  border-bottom: 1px solid #000000;
+  border-bottom: 2px solid #000000;
   padding: 0.8rem 0;
   font-family: var(--sans);
-  font-size: 0.88rem;
-  font-weight: 400;
+  font-size: 0.95rem;
+  font-weight: 600;
   color: #ffffff;
   outline: none;
   width: 100%;
@@ -350,19 +354,24 @@ section.custom-section { padding: 7rem 4rem; }
     -1px -1px 0 #000,  
      1px -1px 0 #000,
     -1px  1px 0 #000,
-     1px  1px 0 #000;
-  -webkit-text-stroke: 0.5px #000;
+     1px  1px 0 #000,
+     0px -1px 0 #000,
+     0px  1px 0 #000,
+    -1px  0px 0 #000,
+     1px  0px 0 #000;
 }
 .form-group input::placeholder, .form-group textarea::placeholder {
-  color: rgba(44, 40, 37, 0.55);
+  color: rgba(44, 40, 37, 0.6);
   text-shadow: none;
   -webkit-text-stroke: 0px;
+  font-weight: 500;
 }
 .form-group select option {
   background-color: var(--cream);
   color: var(--charcoal);
   text-shadow: none;
   -webkit-text-stroke: 0px;
+  font-weight: 400;
 }
 .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
   border-bottom-color: #ffffff;
@@ -378,17 +387,20 @@ section.custom-section { padding: 7rem 4rem; }
   padding: 1rem 2.5rem;
   background: var(--charcoal);
   color: #ffffff;
-  border: 1px solid #000000;
+  border: 2px solid #000000;
   cursor: pointer;
   font-family: var(--sans);
-  font-weight: 400;
+  font-weight: 700;
   transition: all 0.3s;
   text-shadow: 
     -1px -1px 0 #000,  
      1px -1px 0 #000,
     -1px  1px 0 #000,
-     1px  1px 0 #000;
-  -webkit-text-stroke: 0.5px #000;
+     1px  1px 0 #000,
+     0px -1px 0 #000,
+     0px  1px 0 #000,
+    -1px  0px 0 #000,
+     1px  0px 0 #000;
 }
 .form-submit:hover {
   background: var(--ivory);
