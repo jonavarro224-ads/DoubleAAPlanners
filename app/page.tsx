@@ -239,6 +239,7 @@ export default function Home() {
             <span className="contact-detail-label">Teléfono</span>
             <span className="contact-detail-val">+52 (477) 000-0000</span>
           </div>
+          <div className="contact-social-divider"></div>
           <div className="contact-detail">
             <span className="contact-detail-label">Instagram</span>
             <span className="contact-detail-val">@doubleaplanners</span>

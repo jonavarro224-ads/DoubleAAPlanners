@@ -302,112 +302,108 @@ section.custom-section { padding: 7rem 4rem; }
 .testimonial-dots span.active { background: var(--warm-gold); }
 
 /* CONTACT */
-.contact-section { display: grid; grid-template-columns: 1fr 1fr; padding: 0; }
-.contact-info { background: var(--charcoal); padding: 6rem 4rem; display: flex; flex-direction: column; justify-content: center; }
-.contact-info .section-label { text-align: left; }
-.contact-info .section-title { color: var(--ivory); text-align: left; margin-bottom: 2rem; }
-.contact-text { font-size: 0.88rem; line-height: 1.85; color: rgba(249,246,240,0.6); margin-bottom: 3rem; font-weight: 300; }
-.contact-detail { margin-bottom: 1.2rem; display: flex; align-items: baseline; gap: 1rem; }
-.contact-detail-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--warm-gold); min-width: 5rem; }
-.contact-detail-val { font-size: 0.88rem; color: rgba(249,246,240,0.8); font-weight: 300; }
-.contact-form {
-  background: var(--warm-gold);
-  box-shadow: none;
+.contact-section {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  padding: 0;
+  position: relative;
+}
+.contact-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(184,154,106,0.5) 30%, rgba(212,185,135,0.8) 50%, rgba(184,154,106,0.5) 70%, transparent);
+  z-index: 1;
+}
+.contact-info {
+  background: var(--charcoal);
   padding: 6rem 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border-right: 1px solid rgba(184,154,106,0.12);
 }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
-.form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+.contact-info .section-label { text-align: left; }
+.contact-info .section-title { color: var(--ivory); text-align: left; margin-bottom: 1.5rem; }
+.contact-text { font-size: 0.88rem; line-height: 1.9; color: rgba(249,246,240,0.55); margin-bottom: 2.5rem; font-weight: 300; }
+.contact-detail { margin-bottom: 1.4rem; display: flex; flex-direction: column; gap: 0.25rem; }
+.contact-detail-label { font-size: 0.58rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--warm-gold); }
+.contact-detail-val { font-size: 0.9rem; color: rgba(249,246,240,0.75); font-weight: 300; letter-spacing: 0.02em; }
+.contact-social-divider { width: 40px; height: 1px; background: rgba(184,154,106,0.3); margin: 2rem 0 1.5rem; }
+
+.contact-form {
+  background: #13100d;
+  padding: 6rem 4.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.6rem; }
 .form-group label {
-  font-size: 0.75rem;
-  letter-spacing: 0.18em;
+  font-size: 0.58rem;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: #ffffff;
-  font-weight: 700;
-  text-shadow: 
-    -1px -1px 0 #000,  
-     1px -1px 0 #000,
-    -1px  1px 0 #000,
-     1px  1px 0 #000,
-     0px -1px 0 #000,
-     0px  1px 0 #000,
-    -1px  0px 0 #000,
-     1px  0px 0 #000;
+  color: var(--warm-gold);
+  font-weight: 400;
 }
 .form-group input, .form-group textarea, .form-group select {
   background: transparent;
   border: none;
-  border-bottom: 2px solid #000000;
-  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(184,154,106,0.25);
+  padding: 0.75rem 0;
   font-family: var(--sans);
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: rgba(249,246,240,0.9);
   outline: none;
   width: 100%;
-  transition: border-color 0.3s;
+  transition: border-color 0.3s ease;
   border-radius: 0;
   appearance: none;
-  text-shadow: 
-    -1px -1px 0 #000,  
-     1px -1px 0 #000,
-    -1px  1px 0 #000,
-     1px  1px 0 #000,
-     0px -1px 0 #000,
-     0px  1px 0 #000,
-    -1px  0px 0 #000,
-     1px  0px 0 #000;
+  -webkit-appearance: none;
 }
 .form-group input::placeholder, .form-group textarea::placeholder {
-  color: rgba(44, 40, 37, 0.6);
-  text-shadow: none;
-  -webkit-text-stroke: 0px;
-  font-weight: 500;
+  color: rgba(249,246,240,0.18);
+  font-weight: 300;
+}
+.form-group select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23b89a6a'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 4px center;
+  padding-right: 20px;
 }
 .form-group select option {
-  background-color: var(--cream);
-  color: var(--charcoal);
-  text-shadow: none;
-  -webkit-text-stroke: 0px;
-  font-weight: 400;
+  background-color: #1a1612;
+  color: rgba(249,246,240,0.9);
+  font-weight: 300;
 }
 .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
-  border-bottom-color: #ffffff;
+  border-bottom-color: var(--warm-gold);
 }
-.form-group textarea { resize: none; height: 100px; }
+.form-group textarea { resize: none; height: 90px; line-height: 1.7; }
 .form-group.full { grid-column: 1 / -1; }
 .form-submit {
-  margin-top: 2rem;
-  align-self: flex-start;
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
+  margin-top: 2.5rem;
+  align-self: stretch;
+  font-size: 0.65rem;
+  letter-spacing: 0.35em;
   text-transform: uppercase;
-  padding: 1rem 2.5rem;
-  background: var(--charcoal);
-  color: #ffffff;
-  border: 2px solid #000000;
+  padding: 1.1rem 2.5rem;
+  background: transparent;
+  color: var(--warm-gold);
+  border: 1px solid rgba(184,154,106,0.6);
   cursor: pointer;
   font-family: var(--sans);
-  font-weight: 700;
-  transition: all 0.3s;
-  text-shadow: 
-    -1px -1px 0 #000,  
-     1px -1px 0 #000,
-    -1px  1px 0 #000,
-     1px  1px 0 #000,
-     0px -1px 0 #000,
-     0px  1px 0 #000,
-    -1px  0px 0 #000,
-     1px  0px 0 #000;
+  font-weight: 400;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 .form-submit:hover {
-  background: var(--ivory);
-  color: var(--charcoal);
-  border-color: var(--ivory);
-  text-shadow: none;
-  -webkit-text-stroke: 0px;
+  background: var(--warm-gold);
+  color: #13100d;
+  border-color: var(--warm-gold);
 }
 
 /* FOOTER */
